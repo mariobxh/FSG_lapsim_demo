@@ -181,41 +181,41 @@ res.laptime = res.time(end);
 
 %% path
 figure('Color','w');
-plot(res.X(6,:),res.X(7,:));hold on;
-plot(Track.x,Track.y);grid on;
-xlabel('x(m)'),ylabel('y(m)','FontSize',14);
+plot(res.X(6,:),res.X(7,:),'LineWidth',1);hold on;
+plot(Track.x,Track.y,'LineWidth',1);grid on;
+xlabel('x (m)','FontSize',14),ylabel('y (m)','FontSize',14);
 legend({'vehicle path','reference path'},'FontSize',14);
 daspect([1,1,1])
 
 %% velocities
 figure('Color','w');
-plot(Track.S,res.X(3,:));hold on;
-plot(Track.S,res.X(4,:));grid on;
+plot(Track.S,res.X(3,:),'LineWidth',1);hold on;
+plot(Track.S,res.X(4,:),'LineWidth',1);grid on;
 xlabel('distance (m)','FontSize',14),ylabel('velocity (m/s)','FontSize',14);
 legend({'v_x','v_y'},'FontSize',14);
 
 %% normal path deviation
 figure('Color','w');
-plot(Track.S,res.X(1,:));grid on;
-xlabel('distance (m)','FontSize',14),ylabel('n(m)','FontSize',14);
+plot(Track.S,res.X(1,:),'LineWidth',1);grid on;
+xlabel('distance (m)','FontSize',14),ylabel('n (m)','FontSize',14);
 
 %% steering angle
 figure('Color','w');
-plot(Track.S(1:length(res.U(1,:))),res.U(1,:)*180/pi);grid on;
+plot(Track.S(1:length(res.U(1,:))),res.U(1,:)*180/pi,'LineWidth',1);grid on;
 xlabel('distance(m)','FontSize',14),ylabel('steering angle (deg)','FontSize',14);
 
 %% longitudinal slip
 figure('Color','w');
-plot(Track.S(1:length(res.U(2,:))),res.U(2,:));hold on;
-plot(Track.S(1:length(res.U(3,:))),res.U(3,:));grid on;
+plot(Track.S(1:length(res.U(2,:))),res.U(2,:),'LineWidth',1);hold on;
+plot(Track.S(1:length(res.U(3,:))),res.U(3,:),'LineWidth',1);grid on;
 xlabel('distance (m)','FontSize',14),ylabel('longitudinal slip','FontSize',14);
 legend({'front slip','rear slip'},'FontSize',14);
 
 %% yaw angle
 figure('Color','w');
-plot(Track.S,res.X(8,:)*180/pi);hold on;
-plot(Track.S,Track.psi*180/pi);grid on;
-xlabel('distance(m)','FontSize',14),ylabel('psi(deg)','FontSize',14);
+plot(Track.S,res.X(8,:)*180/pi,'LineWidth',1);hold on;
+plot(Track.S,Track.psi*180/pi,'LineWidth',1);grid on;
+xlabel('distance(m)','FontSize',14),ylabel('yaw angle (deg)','FontSize',14);
 legend({'vehicle','reference'},'FontSize',14);
 
 %% power output
@@ -225,5 +225,5 @@ for k = 1:N
 end
 
 figure('Color','w');
-plot(Track.S(1:length(res.Power)),res.Power); grid on
-xlabel('distance (m)','FontSize',14); ylabel('Power (W)','FontSize',14);
+plot(Track.S(1:length(res.Power)),res.Power/1000,'LineWidth',1); grid on
+xlabel('distance (m)','FontSize',14); ylabel('Power (kW)','FontSize',14);

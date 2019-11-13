@@ -1,3 +1,4 @@
+close all;clear;clc;
 %% initialize GGS-data
 ax_steps = 20;  % number of discretization points
 GGS = struct();
