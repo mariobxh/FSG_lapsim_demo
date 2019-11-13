@@ -10,7 +10,7 @@ This repository contains Matlab code that is intended to serve as a starting poi
 
 ## Installation
 
- * if MATLAB is installed on your machine, you just have to unzip CasADi and add it to your MATLAB path
+ * if MATLAB is installed on your machine, you only have to unzip CasADi and add it to your MATLAB path
 
 ## Getting started
 
